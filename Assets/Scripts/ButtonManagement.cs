@@ -22,15 +22,18 @@ public class ButtonManagement : MonoBehaviour
     {
         if(selected)
         {
-            buttonImage.color = colors[1];
+            buttonImage.color = colors[0];
         }
         else
         {
-            buttonImage.color = colors[0];
+            Debug.Log("voy a poner el color chungele");
+            Debug.Log(colors[1]);
+            buttonImage.color = colors[1];
         }
-        if( Input.GetKey(KeyCode.KeypadEnter) && selected)
+        if( Input.GetKey(KeyCode.UpArrow) && selected)
         {
-            SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+            Debug.Log("Aqui Entro");
+            SceneManager.LoadScene("Level1");
         }
     }
 }

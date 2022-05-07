@@ -8,28 +8,34 @@ public class ButtonsMovement : MonoBehaviour
     public int position = 0;
     void Start()
     {
-        
+        buttons[position].selected = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.DownArrow))
         {
+            Debug.Log(buttons[0].selected);
+            Debug.Log(buttons[1].selected);
+           
             buttons[position].selected = false;
+           
             
-        }
         if (position == 0 )
         {
-            Debug.Log("entro aqui");
+        
             position++;
+            Debug.Log(position);
             buttons[position].selected = true;
         }
         else
         {
-            Debug.Log("Entro aqui");
             position--;
+            Debug.Log(position);
             buttons[position].selected = true;
         }
-    }
+        }
+        
+    } 
 }
